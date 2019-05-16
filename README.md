@@ -8,3 +8,23 @@ Python Data Science Handbook by Jake VanderPlas notes. Notes are based on my str
 
 [anyfactor.xyz](https://www.anyfactor.xyz)
 
+## Day 1
+
+Initiating ipython shell in terminal ```ipython```
+
+Initiating Jupyter notebook in terminal ```jupyter notebook```
+
+```help(len)``` = ```len?```
+
+To get the source code ```len??```
+
+Both of this even works for the functions you have created.
+
+Tab completion is awesome. ```len.<tab>```
+
+Tab completion is great in conjunction with ```from pandas import <tab>``` and ```import <tab>``` to list out the objects and libraries.
+
+```*``` with ```?``` for wildcard matching. ```*warning?``` and ```str.*find*?```
+
+
+[continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/01.02-shell-keyboard-shortcuts.html)
