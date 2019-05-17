@@ -50,4 +50,27 @@ for not displaying an output end the statement with a semicolon. ```math.e;```
 
 ```%history -n 1-4``` return history input, ```-n``` for index number,  ```1-4``` for limiting the return statement.
 
-[Continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/01.05-ipython-and-shell-commands.html)
+## Day 2
+
+shell commands work in ipython by prefixing them with ```!```, i.e. ```!ls```
+
+We can also assign variables to the output of this ipython shell commands i.e. ```files = !ls```, which returns a special kind of list.
+
+You can also use python variables as shell variables by using ```{varname}``` i.e. ```!echo {message}```
+
+You can ```cd``` by magic command ```%cd``` or simply ```cd```. This works for every shell command.
+
+```%xmode``` limits the exception (/error) message. ```%xmode``` takes a single argument of the three, ```Plain```(less information), ```Context```(Default), and ```Verbose```(More information). i.e. ```%xmode Plain```.
+
+python's standard debugger ```pdb```, and ipython's is ```ipdb```. We enter into debugging with ```%debug```. Then start giving commands (```print```, ```type``` etc.) to check, and ```quit```.
+
+To run a file in debugging mode ```%run -d test.py```
+
+In the debugger ```help```. ```help <specific command>```.
+
+```%prun``` code profiler.  Very important chapter to write efficient codes. [here is the link to the chapter](https://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html).
+
+[Resources and Book Recommendation](https://jakevdp.github.io/PythonDataScienceHandbook/01.08-more-ipython-resources.html)
+
+
+[Continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/02.00-introduction-to-numpy.htmls)
