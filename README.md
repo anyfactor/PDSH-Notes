@@ -26,7 +26,7 @@ Tab completion is great in conjunction with ```from pandas import <tab>``` and `
 
 ```*``` with ```?``` for wildcard matching. ```*warning?``` and ```str.*find*?```
 
-```ctrl + u ``` copy from beginning, ```ctrl + y``` paste
+```ctrl + u``` copy from beginning, ```ctrl + y``` paste
 
 ```ctrl + p``` previous command in history, ```ctrl + r``` history command
 
@@ -88,7 +88,7 @@ Lists can contain heterogenous elements, which is handy but in a scenario where 
 
 The built-in ```array``` module provides an solution for dense arrays of a uniform type.
 
-```
+```python
 import array
 l = list(range(5))
 a = array.array('i', l) # array('i', [0,1,2,3,4])
@@ -98,21 +98,21 @@ a = array.array('i', l) # array('i', [0,1,2,3,4])
 
 But NumPy's ```ndarray``` is better than what python's array module has to offer.
 
-```
+```python
 import numpy as np
 np.array([1,54,123,123]) # array([1,54,123,123])
 ```
 
 NumPy array's contain the same type of element, unlike python's list that may have different types of elements.
 
-```
+```python
 # To declare the data type of the array
 np.array([1,2,4,5,9], dtype=float32) # array([1,2,4,5,9], dtype=float32)
 ```
 
 For multidimensional array ```np.array([[1,2], [2,3]])``` or ```np.array([range(0,4), range(1,5)])``` or ```np.array([range(i, i+2) for i in [2, 4, 5]])```
 
-```
+```python
 array([[2, 3],
        [4, 5],
        [5, 6]])
@@ -126,4 +126,30 @@ Creating a multidimensional floating point array which is 3X5 (RC = Row, Column)
 
 Creating or filling an array with a specific number. ```np.full((3, 5), 7)``` fills a 3X5 array with 7s.
 
-[continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/02.01-understanding-data-types.html)
+## Day 4
+
+Creating an array that utilizes a range function ```np.arange(0, 20, 2)```, this will create a one dimensional array similar to this ```list(range(10))```
+
+Creating array of evenly spaced numbers  ```np.linspace(1, 10, 5)``` 1 is starting value, 10 is ending value & interval is (10-1)/(5-1). Output is ```[ 1., 3.25, 5.5, 7.75, 10.]```
+
+Creating a multidimensional 3X3 array filled with random values between 0, 1 ```np.random.random((3, 3))```
+
+Creating 3X3 array of normally distributed random values with mean 0, and SD 1 ```np.random.normal(0, 1 (3X3))```
+
+3X3 random integer array start at 0, ends at 10 ```np.random.randint(0, 10, (3X3))```
+
+3X3 identity matrix ```np.eye(3)``` returns the following below.
+
+```python
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+
+Creating an uninitialized array of three integers. ```np.empty(3)``` returns ```array([1., 1., 1.])```
+
+To assign a datatype to the array give the keyword ```dtype='int16'``` or ```dtype=np.int16```
+
+[Learn more about types of datatypes scroll down bottom](https://jakevdp.github.io/PythonDataScienceHandbook/02.01-understanding-data-types.html)
+
+[Continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html)
