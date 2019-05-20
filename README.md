@@ -26,7 +26,7 @@ Tab completion is great in conjunction with ```from pandas import <tab>``` and `
 
 ```*``` with ```?``` for wildcard matching. ```*warning?``` and ```str.*find*?```
 
-```ctrl + u ``` copy from beginning, ```ctrl + y```` paste
+```ctrl + u ``` copy from beginning, ```ctrl + y``` paste
 
 ```ctrl + p``` previous command in history, ```ctrl + r``` history command
 
@@ -88,26 +88,35 @@ Lists can contain heterogenous elements, which is handy but in a scenario where 
 
 The built-in ```array``` module provides an solution for dense arrays of a uniform type.
 
-```import array
+```
+import array
 l = list(range(5))
-a = array.array('i', l) # array('i', [0,1,2,3,4])```
+a = array.array('i', l) # array('i', [0,1,2,3,4])
+```
 
 'i' here declare the type of the array. If we put "f" it would have been a array containing float elements.
 
 But NumPy's ```ndarray``` is better than what python's array module has to offer.
 
-```import numpy as np
-np.array([1,54,123,123]) # array([1,54,123,123])```
+```
+import numpy as np
+np.array([1,54,123,123]) # array([1,54,123,123])
+```
 
 NumPy array's contain the same type of element, unlike python's list that may have different types of elements.
 
-```# To declare the data type of the array
-np.array([1,2,4,5,9], dtype=float32) # array([1,2,4,5,9], dtype=float32)```
+```
+# To declare the data type of the array
+np.array([1,2,4,5,9], dtype=float32) # array([1,2,4,5,9], dtype=float32)
+```
 
-For multidimensional array ```np.array([[1,2], [2,3]])``` or ```np.array([range(0,4), range(1,5)])``` or ```np.array([range(i, i+2) for i in [2, 4, 5]])
-'''array([[2, 3],
+For multidimensional array ```np.array([[1,2], [2,3]])``` or ```np.array([range(0,4), range(1,5)])``` or ```np.array([range(i, i+2) for i in [2, 4, 5]])```
+
+```
+array([[2, 3],
        [4, 5],
-       [5, 6]])'''```
+       [5, 6]])
+```
 
 The inner lists are treated as rows.
 
