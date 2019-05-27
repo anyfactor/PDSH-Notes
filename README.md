@@ -128,7 +128,7 @@ Creating or filling an array with a specific number. ```np.full((3, 5), 7)``` fi
 
 ## Day 4
 
-Creating an array that utilizes a range function ```np.arange(0, 20, 2)```, this will create a one dimensional array similar to this ```list(range(10))```
+Creating an array that utilizes a range function ```np.arange(0, 10, 2)```, this will create a one dimensional array similar to this ```list(range(0, 10, 2))```
 
 Creating array of evenly spaced numbers  ```np.linspace(1, 10, 5)``` 1 is starting value, 10 is ending value & interval is (10-1)/(5-1). Output is ```[ 1., 3.25, 5.5, 7.75, 10.]```
 
@@ -152,4 +152,38 @@ To assign a datatype to the array give the keyword ```dtype='int16'``` or ```dty
 
 [Learn more about types of datatypes scroll down bottom](https://jakevdp.github.io/PythonDataScienceHandbook/02.01-understanding-data-types.html)
 
-[Continue from here](https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html)
+## Day 5
+
+Seeding ensure reproducibility when generating random numbers. ```np.random.seed(0)```
+
+```np.random.randint(10, size- (3, 4))``` created a random array which contains random integers from 0-10 in the size 3X4.
+
+```array.ndim``` return number of dimensions, as in one, two or three.
+
+```array.shape``` returns the shape of the array, as in number of rows, and columns
+
+```array.size``` returns the size of the array, as in number of elements in the array and which is the multiplication of shape output.
+
+```array.dtype``` returns the datatype of the array.
+
+```array.itemsize``` for size of each element in the array, ```array.nbytes``` for size of the entire array, which equal to ```itemsize```X```size```.
+
+Indexing an array is similar to standard indexing operation. For 2 dimensional arrays follow RC which is ```[Row, Column]```. Negative index numbers will work also.
+
+Values can be modified through indexing ```arry[0,2] = 12```. As array contain uniform data type adding mismatched data type will be truncated (converted to match the array datatype).
+
+*Slicing* is also possible with arrarys, ```x[<start>, <stop>, <step>]```. Slicing examples >> ```x[::2]``` every other element, ```x[1::2]``` starts at index 1 then every other element, ```x[::-1]``` reverse, ```x[5::-1]``` starts at 5 then goes reverse.
+
+*Multidimensional subarrays(slicing)* row and commas are seperated by commas. ```x[:2, :2]``` first 2 rows, and first 2 columns.
+
+```x[:3, ::2]``` first 3 rows, then every other column element.
+
+```x[::-1, ::-1]``` reverses the array.
+
+To access a single row or column it can be done through ```:```, so ```x[:, 0]``` first single column, ```x[2, :]``` third single row. Single row can be access by only giving the row number ```x[2]```
+
+*Subarray as no copy views* modifying a variable that assigned a subarray with modify the original array. This behavior is similar to python list's reference of values concept. Suppose ```x2 = x[:2, :2]``` modifying ```x2``` will modify the original array of ```x```.
+
+To create a copy of the original when creating the subarrays and evade referencing, use ```x2_copy = x[:3, :4].copy()```
+
+[Restart from here](https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html#Reshaping-of-Arrays)
